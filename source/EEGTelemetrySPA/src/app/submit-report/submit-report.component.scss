@@ -1,0 +1,38 @@
+.input-fields {
+    margin-right: 45px;
+}
+
+.input-group {
+    padding-bottom: 15px;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    background-image: url('~src/assets/test5.png') ;
+   //background-position: center;
+    background-repeat: no-repeat;
+  background-size: cover;
+  }
+
+  .mat-dialog-container {
+    padding: 0% !important;
+  }
+
+  .k-dropdown-wrap>.k-input, .k-dropdown .k-dropdown-wrap .k-select, .k-list, .k-reset {
+    background-color: white !important;
+}
+
+.sign-difgital {
+    
+    background-image: url('~src/assets/unreadable-letters-signaturely.svg') ;
+   //background-position: center;
+    background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.no-border :focus{
+    outline: none !important;border: none !important;
+    -webkit-box-shadow: none !important;
+}
+

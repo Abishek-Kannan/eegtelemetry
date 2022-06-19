@@ -1,0 +1,91 @@
+.image {
+    width: 100%;
+    height: 91%;
+    background-image: url('~src/assets/dashboard-bg.png') ;
+   //background-position: center;
+    background-repeat: no-repeat;
+  background-size: cover;
+  }
+
+.create-report {
+    margin-left: 23px;
+   
+}
+
+.notifications {
+  height: 38px;
+  margin-top: 12px;
+  margin-left: 82%;
+}
+
+.search-patient {
+  display: flex;
+  margin-left: 12px;
+  padding-right: 8px !important;
+}
+
+.filter-list {
+  margin-left: auto;
+  height: 40px;
+  width: 102px;
+  border: 1px solid gray;
+  position: relative;
+ 
+}
+
+.patient-scans {
+  margin-left: 13px;
+    display: table;
+    height: 395px;
+    border: 1px solid black;
+    margin-top: 10px;
+    border-collapse: separate;
+    border-radius: 7px;
+    background-color: white;
+    text-align: center;
+}
+
+.patient-scans td:nth-of-type(1) {width:10% !important;}
+
+.row > * {
+  padding-left:0% !important;
+  padding-right: 0% !important;
+}
+
+.table > :not(caption) > * > * {
+  padding: 0.2rem 0.3rem;
+}
+
+ th {
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.report-status {
+  position: relative;
+  border: 1px solid;
+  border-radius: 12px;
+  //top: 6px;
+  width: 80px;
+  left: 14px;
+  text-align: center;
+  margin: 0 0 1px !important;
+} 
+
+.pending-report {
+   background-color: 	#00FF00;
+}
+
+.submitted-report {
+    background-color: 	#f4ca16;
+}
+
+.mat-body p, .mat-body-1 p, .mat-typography p {
+  margin: 0 0 1px;
+}
+
+.mat-dialog-container {
+  padding: 0% !important;
+}

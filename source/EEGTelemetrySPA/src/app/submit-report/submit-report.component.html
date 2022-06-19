@@ -1,0 +1,75 @@
+<div class="image" >
+    <h1 mat-dialog-title style="margin-left: 255px;padding-top: 15px;position: relative;">REPORT</h1>
+    <div mat-dialog-content >
+        <form [formGroup]="reportForm" (ngSubmit)="addReport()">
+            <div class="input-group">
+              <label class="control-label col-sm-2" for="email" style="margin-top: 2px;">Patient ID:</label>
+              <div class="col-sm-3 input-fields">
+                <input type="email" class="form-control no-border" style="padding: 0% !important;width: 150px;" id="email" formControlName="patientID" placeholder="">
+              </div>
+              <label class="control-label col-sm-2" for="email"  style="margin-left: 15px;margin-top: 2px;padding-left: 2px;">Patient Name:</label>
+              <div class="col-sm-3">
+                <input type="email" style="padding: 0% !important;width: 150px;margin-left: 22px;" class="form-control" id="email" formControlName="patientName" placeholder="">
+              </div>
+              
+            </div>
+            <div class="input-group" style="padding-bottom: 0% !important;height: 47px;padding-top: 8px;">
+                <label class="control-label col-sm-2" for="email" style="margin-top: 6px;">DOB:</label>
+                <div class="col-sm-3 input-fields">
+                  <mat-form-field style="width: 150px;top: -12px;">
+                    <input matInput [matDatepicker]="DOB" formControlName="DOB" placeholder="Choose a date">
+                    <mat-datepicker-toggle matSuffix [for]="DOB"></mat-datepicker-toggle>
+                    <mat-datepicker #DOB></mat-datepicker>
+                  </mat-form-field>
+                </div>
+                <label class="control-label col-sm-2" for="email" style="margin-left: 15px;margin-top: 4px;padding-left: 1px;">Sex:</label>
+                <div class="col-sm-3">
+                  <kendo-dropdownlist style="width: 150px;margin-left: 22px;height: 29px;" [data]="listItems" formControlName="sex" value="">
+                  </kendo-dropdownlist>
+                </div>
+                
+              </div>
+              <div class="input-group" style="padding-top: 18px;padding-bottom: 0% !important;">
+                <label class="control-label col-sm-2" for="email" style="margin-top: 5px;">Last Seizure:</label>
+                <div class="col-sm-3 input-fields">
+                  <mat-form-field style="width: 150px;top: -12px;">
+                    <input matInput [matDatepicker]="lastSeizure" formControlName="lastSeizure" placeholder="Choose a date">
+                    <mat-datepicker-toggle matSuffix [for]="lastSeizure"></mat-datepicker-toggle>
+                    <mat-datepicker #lastSeizure></mat-datepicker>
+                  </mat-form-field>
+                </div>
+                <label class="control-label col-sm-2" for="lastMeal" style="margin-left: 15px;margin-top: 5px;">Last Meal:</label>
+                <div class="col-sm-3">
+                  <kendo-timepicker style="width: 150px;margin-left: 21px;" formControlName="lastMeal" [(value)]="value"></kendo-timepicker>
+                </div>
+                
+              </div>
+            
+            <div class="form-group">
+                <label for="comment">Current Medications :</label>
+                <textarea class="form-control" cols="2" style="margin-top : 6px;" formControlName="currentMedication" rows="1" id="currentMedication"></textarea>
+              </div>
+            <div class="form-group" style="margin-top: 12px;">
+              <label for="comment">Findings/Technician Notes :</label>
+              <textarea class="form-control" style="margin-top: 6px;" cols="2" rows="1" formControlName="findings" id="findings"></textarea>
+            </div>
+            <div class="form-group" style="margin-top: 10px;margin-right: 18px;">
+                <label for="comment"  style="margin-right: 18px;">Interpretation :</label>
+                <input type="radio" value="Normal" style="position: relative;top: 2px;" formControlName="interpretation" > Normal
+                <input type="radio" value="Abnormal" style="margin-left: 11px;position: relative;top: 2px;" formControlName="interpretation"> Abnormal
+            </div>
+            <div class="form-group" style="margin-top: 10px;">
+                <label for="clinicalCorrelation">Clinical Correlation :</label>
+                <textarea class="form-control no-border" cols="2" rows="1" formControlName="clinicalCorrelation" id="clinicalCorrelation"></textarea>
+              </div>
+          </form>
+    </div>
+    <div mat-dialog-actions style="margin-top: 10px;padding:0% !important">
+      <button mat-button class="btn btn-primary" style="margin-left :24px" (click)="onCancelClick()">Cancel</button>
+      <button mat-button class="btn btn-primary" style="position: relative;margin-left: 368px;" [mat-dialog-close]="reportData.reportID" type="submit" (click)="addReport()" cdkFocusInitial>Sign and Send</button>
+    </div>
+    </div>
+
+    <!-- <div id="pdfTable" #pdfTable>
+     <p style="margin-top: 30px;">Report</p>
+    </div> -->

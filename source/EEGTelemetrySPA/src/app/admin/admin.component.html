@@ -1,0 +1,62 @@
+<app-header></app-header>
+<mat-spinner style="position: relative;left: 550px;top: 200px;" *ngIf="isDataLoading"></mat-spinner>
+
+<div *ngIf="!isDataLoading" class="image">
+    <button type="button" (click)="showReportModalPopup($event)" class="create-report btn btn-primary">Create Report</button>
+    <button type="button" mat-button [matMenuTriggerFor]="menu" (click)="clearNotifications()"  class="notifications btn btn-primary">
+      <div *ngIf="this.newReports.length == 0"> <mat-icon style="position: relative;top: 6px;">notifications</mat-icon></div>
+      <div *ngIf="this.newReports.length > 0"> <mat-icon style="position: relative;top: 6px;color: greenyellow;">notifications_active</mat-icon></div> 
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>{{notificationText}}</button>
+        
+      </mat-menu>  
+    <div class="container" style="margin-left: 10px;margin-top: 10px;height: 85%;">
+        <div class="row" style="display: flex;width: 111%;">
+          <div class="search-patient" >
+            <input class="form-control" style="width: 35%;height: 40px;border: 1px;border-radius: 15px;" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="  Start searching for a patient by id or name">
+            
+            <button type="button" class="filter-list btn btn-primary">
+              <mat-icon style="position: relative;left: -23px;top: 1px;">tune</mat-icon>
+              <p style="position: relative;left: 15px;top: -29px;">Filter</p>
+            </button>
+          </div>
+          <table class="patient-scans table" >
+              
+            <thead>
+            <tr>
+              <th style="vertical-align: middle;height: 40px;">PATIENT ID</th>
+              <th style="vertical-align: middle;height: 40px;">PATIENT NAME</th>
+              <th style="vertical-align: middle;height: 40px;">SCAN CENTRE</th>
+              <th style="vertical-align: middle;height: 40px;">REPORT STATUS</th>
+              <th style="vertical-align: middle;height: 40px;">RECORDING TIME</th>
+              <th style="vertical-align: middle;height: 40px;">REPORTING TIME</th>
+              <th style="vertical-align: middle;height: 40px;"></th>
+              <th style="vertical-align: middle;height: 40px;"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let report of scanReportList | filter:searchText" >
+              <td style="vertical-align: middle;height: 5px;width :10%;font-weight: 500;">{{report.patientID }}</td>
+              <td style="vertical-align: middle;width :20%;font-weight: 500;">{{report.patientFullName}}</td>
+              <td  style="vertical-align: middle;width :10%;font-weight: 500;">{{report.scanCentre}}</td>
+              <td  style="vertical-align: middle;width :10%;font-weight: 500;"><p class="report-status" [ngClass]="report.reportStatus == 'Pending' ? 'pending-report' : 'submitted-report'">{{report.reportStatus}}</p></td>
+              <td  style="vertical-align: middle;width :15%;font-weight: 500;">{{report.recordingTime | date : 'medium'}}</td>
+              <td  style="vertical-align: middle;width :15%;font-weight: 500;">{{report.reportingTime | date : 'medium'}}</td> 
+              <td  style="vertical-align: middle;width :02%;font-weight: 500;">
+                <button style="border: none;background-color: white;" [disabled]="report.reportStatus == 'Pending'" (click)="downloadAsPdf(report.reportID)">
+                  <mat-icon style="font-size : 17px !important;position: relative;top: 4px;cursor: pointer;"> file_download</mat-icon></button></td> 
+              <td  style="vertical-align: middle;width :8%;font-weight: 500;"> 
+              <button type="button" style="    font-size: 12px;height: 24px;width: 89px;" (click)="viewEEG(report.id)" class="btn btn-primary"><p style="position: relative;top: -3px;">View EEG</p></button>
+              </td>
+            </tr>
+            
+            <tr >
+              
+              
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+</div>
