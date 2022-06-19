@@ -1,0 +1,21 @@
+<div class="align-top-bottom canister" id="printable">
+  <span class="align-top-bottom">
+    Upload a file
+    <input type="file" title="upload" (change)="onUploadFile($event)">
+  </span>
+<!--  <button (click)="onZoom()">Zoom</button>-->
+  <h1 *ngIf="isLogging">
+    Loading.....
+  </h1>
+  <section id="graph-plotter-section" class="align-top-bottom graph-plot-section">
+
+<!--    <canvas id="myChart">-->
+<!--    </canvas>-->
+  </section>
+
+<!--  <button (click)="navigateTo('invoice')">Print this Page</button>-->
+
+<!--  <button (click)="navigateTo('upload')">Upload File</button>-->
+
+
+</div>

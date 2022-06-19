@@ -1,0 +1,46 @@
+*{
+  display: flex;
+}
+.canister{
+  width: 100%;
+  height: 100vh;
+}
+#graph-plotter-section{
+  /*height: 200px;*/
+}
+#myChart{
+  width: 90%;
+  margin: auto;
+  /*max-height: 100px;*/
+}
+.align-left-right{
+  flex-direction: row;
+}
+.align-top-bottom{
+    flex-direction: column;
+}
+table{
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  justify-content: space-around;
+  margin: auto;
+  border: solid;
+}
+tr,th,td{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
+}
+.graph-plot-section{
+  display: flex;
+  flex-direction: column-reverse;
+  background-color: white;
+  border: solid;
+}
+apx-chart{
+  margin: auto;
+}
