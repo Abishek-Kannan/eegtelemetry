@@ -1,0 +1,4 @@
+-->This is an video explaing the functionalities of updated EEGViewer that is planned to be developed but not available now in hosted application.
+-->This would require 2-4 months of development as it involves core signal processing algorithms and Ml/AI algorithms for various functionalities.
+-->This is developed using Matlab and the code needs to be converted to Python to be hosted in a web server as a web applications.
+-->Due to these constraints this advances EEGViewer screen in still under development.
